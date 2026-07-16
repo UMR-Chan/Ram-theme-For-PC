@@ -1,0 +1,234 @@
+/**
+ * @name Ram ReZero Pastel Theme
+ * @author UMR_HCK
+ * @version 1.0.0
+ * @description A beautiful, highly customized pastel pink and cream theme inspired by Ram from Re:Zero, optimized for BetterDiscord.
+ * @source https://github.com/UMR-HCK
+ */
+
+/* ==========================================================================
+   COLOR PALETTE & VARIABLES
+   ========================================================================== */
+:root {
+    /* Primary Colors (Ram's Pink Hair & Eyes) */
+    --ram-pink-light: #fecdcd;
+    --ram-pink-main: #ffb1b8;
+    --ram-pink-dark: #f08a9c;
+    --ram-pink-vibrant: #ff8fa3;
+    --ram-pink-hover: #ff758f;
+    
+    /* Background & Accent Colors (Maid Outfit & Soft Pastel Gradients) */
+    --ram-cream-light: #faf5eb;
+    --ram-cream-bg: #f5ece1;
+    --ram-dark-accent: #2e2426; /* Deep dark tone from the maid outfit */
+    --ram-dark-hover: #3f3134;
+    --ram-white: #ffffff;
+    --ram-white-translucent: rgba(255, 255, 255, 0.7);
+    
+    /* BetterDiscord Specific Variable Overrides */
+    --brand-experiment: var(--ram-pink-main);
+    --brand-experiment-560: var(--ram-pink-dark);
+    --brand-experiment-600: var(--ram-pink-vibrant);
+    --control-brand-foreground: var(--ram-pink-main);
+    
+    /* Backgrounds */
+    --background-primary: var(--ram-white);
+    --background-secondary: var(--ram-cream-light);
+    --background-secondary-alt: var(--ram-cream-bg);
+    --background-tertiary: var(--ram-cream-bg);
+    --background-floating: var(--ram-white);
+    --background-modifier-selected: var(--ram-pink-light);
+    --background-modifier-hover: rgba(254, 205, 205, 0.4);
+    --background-modifier-active: var(--ram-pink-main);
+    
+    /* Text */
+    --text-normal: var(--ram-dark-accent);
+    --text-muted: #7d6e71;
+    --text-link: var(--ram-pink-dark);
+    --header-primary: var(--ram-dark-accent);
+    --header-secondary: #5e4c4f;
+    --interactive-normal: #8a7377;
+    --interactive-hover: var(--ram-pink-dark);
+    --interactive-active: var(--ram-pink-vibrant);
+    
+    /* Margins, Borders & Styling */
+    --radius-small: 6px;
+    --radius-medium: 12px;
+    --radius-large: 18px;
+    --border-color: rgba(254, 205, 205, 0.5);
+}
+
+/* ==========================================================================
+   GLOBAL STYLES & BACKGROUND
+   ========================================================================== */
+body {
+    background-color: var(--background-primary) !important;
+    font-family: "GG Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+::-webkit-scrollbar-track {
+    background: var(--ram-cream-light) !important;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--ram-pink-light) !important;
+    border-radius: var(--radius-medium) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ram-pink-main) !important;
+}
+
+/* ==========================================================================
+   NAVIGATION & SIDEBARS
+   ========================================================================== */
+/* Guilds Sidebar (Leftmost) */
+.wrapper_fea7ef {
+    background-color: var(--background-tertiary) !important;
+    border-right: 1px solid var(--border-color);
+}
+
+/* Home button & Guild Icons */
+.childWrapper_f90abb {
+    background-color: var(--ram-pink-light) !important;
+    color: var(--ram-dark-accent) !important;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.wrapper_f90abb:hover .childWrapper_f90abb {
+    background-color: var(--ram-pink-main) !important;
+    transform: scale(1.05);
+}
+
+/* Active Guild Indicator */
+.item_c4b11b {
+    background-color: var(--ram-pink-dark) !important;
+}
+
+/* Channel Sidebar */
+.sidebar_a4d4d2 {
+    background-color: var(--background-secondary) !important;
+    border-right: 1px solid var(--border-color);
+}
+
+/* Selected Channel Accent */
+.modeSelected_ca77c8 .link_ca77c8 {
+    background-color: var(--ram-pink-light) !important;
+}
+.modeSelected_ca77c8 .link_ca77c8 .name_d8bfb3 {
+    color: var(--ram-dark-accent) !important;
+    font-weight: 600;
+}
+
+/* Hover Channel Accent */
+.modeHover_ca77c8:hover .link_ca77c8 {
+    background-color: rgba(254, 205, 205, 0.3) !important;
+}
+
+/* ==========================================================================
+   CHAT AREA
+   ========================================================================== */
+.chat_a7d72e {
+    background-color: var(--background-primary) !important;
+}
+
+/* Chat Input Bar */
+.scrollableContainer_d0696b {
+    background-color: var(--background-secondary) !important;
+    border: 2px solid var(--ram-pink-light);
+    border-radius: var(--radius-medium);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.scrollableContainer_d0696b:focus-within {
+    border-color: var(--ram-pink-main);
+    box-shadow: 0 0 8px rgba(255, 177, 184, 0.5);
+}
+
+/* Messages styling */
+.message_d21673:hover {
+    background-color: var(--background-modifier-hover) !important;
+}
+
+/* Mentions styling */
+.mentioned_d21673 {
+    background: rgba(255, 177, 184, 0.15) !important;
+    border-left: 4px solid var(--ram-pink-dark) !important;
+}
+.mentioned_d21673::before {
+    display: none;
+}
+
+/* User Mention Tags inside Chat */
+.mention.interactive {
+    color: var(--ram-pink-dark) !important;
+    background: rgba(255, 177, 184, 0.3) !important;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-weight: 600;
+}
+.mention.interactive:hover {
+    background: var(--ram-pink-main) !important;
+    color: var(--ram-white) !important;
+}
+
+/* ==========================================================================
+   MEMBERS LIST (Right Sidebar)
+   ========================================================================== */
+.container_cbd271 {
+    background-color: var(--background-secondary) !important;
+    border-left: 1px solid var(--border-color);
+}
+.member_a0c17b {
+    background: transparent !important;
+}
+.member_a0c17b:hover {
+    background-color: rgba(254, 205, 205, 0.3) !important;
+    border-radius: var(--radius-small);
+}
+.selected_a0c17b {
+    background-color: var(--ram-pink-light) !important;
+    border-radius: var(--radius-small);
+}
+
+/* ==========================================================================
+   USER PROFILE POPUPS & MODALS
+   ========================================================================== */
+.userPopoutOuter_c69a7b {
+    background-color: var(--background-floating) !important;
+    border: 2px solid var(--ram-pink-light);
+    border-radius: var(--radius-large);
+    box-shadow: 0 8px 24px rgba(46, 36, 38, 0.15) !important;
+}
+.userPopoutInner_c69a7b {
+    background-color: var(--background-floating) !important;
+}
+
+/* ==========================================================================
+   USER PANEL (Bottom Left)
+   ========================================================================== */
+.container_b2ca2c {
+    background-color: var(--background-secondary-alt) !important;
+    border-top: 1px solid var(--border-color);
+}
+.avatarWrapper_b2ca2c:hover {
+    background-color: var(--ram-pink-light) !important;
+    border-radius: var(--radius-small);
+}
+
+/* ==========================================================================
+   BUTTONS AND CONTROLS
+   ========================================================================== */
+.button_dd4f85 {
+    color: var(--interactive-normal) !important;
+}
+.button_dd4f85:hover {
+    color: var(--interactive-hover) !important;
+    background-color: var(--ram-pink-light) !important;
+}
+
+/* Active buttons (Mute/Deafen) */
+.button_dd4f85.active_dd4f85 {
+    color: var(--ram-pink-dark) !important;
+}
